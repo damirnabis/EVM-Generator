@@ -19,8 +19,8 @@ First, make sure you have Python installed. To set up the project, run the follo
 
 ```bash
 # Clone the project (if applicable) or move to your project folder
-git clone https://github.com/damirnabis/evm-wallet-generator.git
-cd evm-wallet-generator
+git clone https://github.com/damirnabis/EVM-Generator.git
+cd EVM-Generator
 
 # Create and activate a virtual environment
 python -m venv venv
