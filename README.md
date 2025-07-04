@@ -19,7 +19,7 @@ First, make sure you have Python installed. To set up the project, run the follo
 
 ```bash
 # Clone the project (if applicable) or move to your project folder
-git clone https://github.com/your-username/evm-wallet-generator.git
+git clone https://github.com/damirnabis/evm-wallet-generator.git
 cd evm-wallet-generator
 
 # Create and activate a virtual environment
