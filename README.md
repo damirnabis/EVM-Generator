@@ -33,4 +33,4 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Run the wallet generator script
-python wallet_generator.py
+python main.py
