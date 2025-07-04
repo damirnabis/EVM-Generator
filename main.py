@@ -6,8 +6,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
 
 Account.enable_unaudited_hdwallet_features()
-
-lock = threading.Lock()  # Для потокобезопасной записи в список
+lock = threading.Lock()
 
 def generate_wallet():
     mnemonic = Bip39MnemonicGenerator().FromWordsNumber(12)
@@ -33,14 +32,14 @@ def save_to_excel(wallets, filename="wallets.xlsx"):
         ws.append([wallet["address"], wallet["private_key"], wallet["mnemonic"]])
     
     wb.save(filename)
-    print(f"[+] Сохранено в {filename}")
+    print(f"[+] Saved to {filename}")
 
 def main():
-    count = int(input("Сколько кошельков сгенерировать? "))
-    max_threads = int(input("Сколько потоков использовать? (напр. 4, 8, 16): "))
+    count = int(input("How many wallets to generate? "))
+    max_threads = int(input("How many threads to use? (e.g. 4, 8, 16): "))
 
     wallets = []
-    progress_bar = tqdm(total=count, desc="Генерация", ncols=80)
+    progress_bar = tqdm(total=count, desc="Generating wallets", ncols=80)
 
     with ThreadPoolExecutor(max_workers=max_threads) as executor:
         futures = [executor.submit(generate_wallet) for _ in range(count)]
