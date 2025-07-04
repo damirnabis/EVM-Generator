@@ -1,0 +1,4 @@
+bip-utils
+eth-account
+openpyxl
+tqdm
